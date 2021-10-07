@@ -15,13 +15,7 @@ class ConferenceController(private val conferenceService: ConferenceService) { /
 
     @Get("/random") // <3>
     fun randomConf(): Conference {
-        try {
-            logger.info("Before logging with StructuredArguments")
-            logger.info("test", StructuredArguments.kv("foo", LogData("Test", "path", "test", "uri.host")))
-            logger.info("After logging with StructuredArguments")
-        } catch (e: Exception) {
-            logger.info("An error occurred", e)
-        }
+        logger.info("test", StructuredArguments.kv("foo", LogData("Test", "path", "test", "uri.host")))
         return conferenceService.randomConf() // <4>
     }
 }
