@@ -1,7 +1,7 @@
 package example.micronaut
 
+import jakarta.inject.Singleton
 import java.util.Random
-import javax.inject.Singleton
 
 @Singleton // <1>
 class ConferenceService {
